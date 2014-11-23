@@ -1,0 +1,15 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index
+GET     /hw                         controllers.HelloWorldController.get
+
+GET     /products                   controllers.ProductsController.get
+POST    /products                   controllers.ProductsController.post
+GET     /products/:ean              controllers.ProductsController.getOne(ean: Long)
+PUT     /products/:ean              controllers.ProductsController.putOne(ean: Long)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
